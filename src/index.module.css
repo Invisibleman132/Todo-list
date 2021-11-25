@@ -7,4 +7,5 @@ body {
   height: 75vh;
   margin-top: 10vh;
   background-color: rgba(255, 255, 255, 0.5);
+  overflow-y: auto;
 }
