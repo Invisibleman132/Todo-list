@@ -1,0 +1,23 @@
+.container {
+  margin-top: 5vh;
+  margin-left: 5vw;
+}
+input::placeholder {
+  color: grey;
+  opacity: 0.5;
+  font-size: 3rem;
+  text-align: center;
+}
+
+input {
+  width: 70vw;
+  height: 10vh;
+  font-size: 3rem;
+}
+button > img {
+  max-height: 5vh;
+}
+button {
+  margin-left: 5vw;
+  margin-right: 1vw;
+}

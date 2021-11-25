@@ -1,0 +1,19 @@
+.emptyContainer {
+  display: flex;
+  flex-direction: column;
+}
+.empty {
+  font-size: 4.5em;
+  margin-left: 18vw;
+  padding-top: 30vh;
+  color: rgba(53, 51, 51, 0.5);
+}
+.check {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-left: 5%;
+  font-size: 3.2rem;
+  word-break: break-all;
+  word-wrap: normal;
+}
