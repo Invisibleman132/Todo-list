@@ -1,30 +1,30 @@
 import { useState } from "react";
 import add from "./img/add.png";
-import styles from "./input.module.css";
-import { List } from "../List";
+import styles from "./todoForm.module.css";
 
-export const Input = (props) => {
+export const TodoForm = (props) => {
   const [input, setInput] = useState("");
-  const [btnState, setBtnState] = useState("true");
+  const [btnState, setBtnState] = useState(true);
 
   const handleChange = (e) => {
-    console.log(e.target.value);
     setInput(e.target.value);
     if (e.target.value) {
-      setBtnState("");
+      setBtnState(false);
     } else {
-      setBtnState("true");
+      setBtnState(true);
     }
   };
 
   const handleSumbit = (e) => {
     e.preventDefault();
-    props.onSubmit({
-      id: Math.floor(Math.random() * 10000),
-      text: input,
-    });
+    if (input.replace(/\s/g, "").length) {
+      props.onSubmit({
+        id: Math.floor(Math.random() * 10000),
+        text: input,
+      });
+    }
     setInput("");
-    setBtnState("true");
+    setBtnState(true);
   };
   return (
     <form className={styles.container} onSubmit={handleSumbit}>
@@ -36,7 +36,7 @@ export const Input = (props) => {
         onChange={handleChange}
       />
       <button disabled={btnState}>
-        <img src={add} />
+        <img src={add} alt="" />
       </button>
     </form>
   );

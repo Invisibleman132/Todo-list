@@ -1,15 +1,16 @@
 import { useState } from "react";
-import { Container, Logo, Header, List } from "./components";
+import { Container, Header, List } from "./components";
 import styles from "./index.module.css";
 
 function App() {
   const [data, setData] = useState([]);
+  console.log(data);
   const removeTodo = (id) => {
     const removeArr = [...data].filter((todo) => todo.id !== id);
     setData(removeArr);
   };
   const addData = (inputData) => {
-    setData([inputData, ...data]);
+    setData([...data, inputData]);
   };
   return (
     <Container>

@@ -1,4 +1,3 @@
-import { useState } from "react";
 import del from "./img/del.png";
 import styles from "./list.module.css";
 
@@ -16,7 +15,7 @@ export const List = ({ data, removeTodo }) => {
           {todo.text}
         </div>
         <button onClick={() => removeTodo(todo.id)}>
-          <img src={del}></img>
+          <img src={del} alt=""></img>
         </button>
       </div>
     ));
