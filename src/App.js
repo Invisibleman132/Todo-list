@@ -4,13 +4,18 @@ import styles from "./index.module.css";
 
 function App() {
   const [data, setData] = useState([]);
-  console.log(data);
   const removeTodo = (id) => {
     const removeArr = [...data].filter((todo) => todo.id !== id);
     setData(removeArr);
   };
-  const addData = (inputData) => {
-    setData([...data, inputData]);
+  const addData = (inputText) => {
+    if (inputText.replace(/\s/g, "").length) {
+      const inputData = {
+        id: Math.floor(Math.random() * 10000),
+        text: inputText,
+      };
+      setData([...data, inputData]);
+    }
   };
   return (
     <Container>

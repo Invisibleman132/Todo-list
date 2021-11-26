@@ -17,12 +17,7 @@ export const TodoForm = (props) => {
 
   const handleSumbit = (e) => {
     e.preventDefault();
-    if (input.replace(/\s/g, "").length) {
-      props.onSubmit({
-        id: Math.floor(Math.random() * 10000),
-        text: input,
-      });
-    }
+    props.onSubmit(input);
     setInput("");
     setBtnState(true);
   };
