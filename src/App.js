@@ -10,14 +10,28 @@ function App() {
   };
   const addData = (inputText, dateData) => {
     const getDate = (dateData) => {
-      const date = `${dateData.getUTCDate()}.${
-        dateData.getMonth() + 1
-      }.${dateData.getFullYear()} `;
+      const day =
+        dateData.getUTCDate() < 10
+          ? `0${dateData.getUTCDate()}`
+          : dateData.getUTCDate();
+      const month =
+        dateData.getMonth() + 1 < 10
+          ? `0${dateData.getMonth() + 1}`
+          : dateData.getMonth() + 1;
+      const date = `${day}.${month}.${dateData.getFullYear()} `;
       return date;
     };
 
     const getTime = (dateData) => {
-      const time = ` ${dateData.getHours()}:${dateData.getMinutes()}`;
+      const minutes =
+        dateData.getMinutes() < 10
+          ? `0${dateData.getMinutes()}`
+          : dateData.getMinutes();
+      const hours =
+        dateData.getHours() < 10
+          ? `0${dateData.getHours()}`
+          : dateData.getHours();
+      const time = ` ${hours}:${minutes}`;
       return time;
     };
     const inputData = {

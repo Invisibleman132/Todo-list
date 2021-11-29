@@ -20,6 +20,7 @@
 }
 .todoText {
   margin: auto 0 auto 0;
+  min-width: 35vw;
 }
 .container:hover {
   border: solid 3px;
@@ -40,4 +41,18 @@
   min-width: 8vw;
   display: flex;
   flex-direction: column;
+}
+.three {
+  border-left: 2px solid;
+  display: flex;
+  flex-direction: row;
+  margin-right: auto;
+  margin-left: 5vw;
+  font-size: 2rem;
+  word-break: break-all;
+  word-wrap: normal;
+  min-width: 7vw;
+}
+.three > section {
+  margin: auto;
 }
