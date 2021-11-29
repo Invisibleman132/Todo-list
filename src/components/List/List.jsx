@@ -10,13 +10,19 @@ export const List = ({ data, removeTodo }) => {
     );
   } else {
     return data.map((todo, index) => (
-      <div key={index} className={styles.check}>
-        <div key={todo.id} className={styles.container}>
+      <div key={index} className={styles.container}>
+        <div key={todo.id} className={styles.todoText}>
           {todo.text}
         </div>
-        <button onClick={() => removeTodo(todo.id)}>
-          <img src={del} alt=""></img>
-        </button>
+        <div className={styles.rightSide}>
+          <div className={styles.dateWrapper}>
+            <section>{todo.date}</section>
+            <section>{todo.time}</section>
+          </div>
+          <button onClick={() => removeTodo(todo.id)}>
+            <img src={del} alt=""></img>
+          </button>
+        </div>
       </div>
     ));
   }

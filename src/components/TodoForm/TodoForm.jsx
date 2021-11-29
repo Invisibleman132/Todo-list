@@ -7,17 +7,22 @@ export const TodoForm = (props) => {
   const [btnState, setBtnState] = useState(true);
 
   const handleChange = (e) => {
+    if (e.target.value === "  ") {
+      e.target.value = "";
+    }
     setInput(e.target.value);
     if (e.target.value) {
       setBtnState(false);
-    } else {
+    }
+    if (!e.target.value.trim()) {
       setBtnState(true);
     }
   };
 
   const handleSumbit = (e) => {
     e.preventDefault();
-    props.onSubmit(input);
+    const dateData = new Date();
+    props.onSubmit(input, dateData);
     setInput("");
     setBtnState(true);
   };
@@ -29,6 +34,9 @@ export const TodoForm = (props) => {
         name="text"
         value={input}
         onChange={handleChange}
+        required
+        pattern="^[^А-Яа-яЁё]+$"
+        title="Русские символы запрещены"
       />
       <button disabled={btnState}>
         <img src={add} alt="" />

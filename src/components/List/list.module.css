@@ -8,12 +8,36 @@
   padding-top: 30vh;
   color: rgba(53, 51, 51, 0.5);
 }
-.check {
+.container {
+  border: 1px dotted;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  padding-left: 5%;
-  font-size: 3.2rem;
+  padding-left: 3%;
+  font-size: 2rem;
   word-break: break-all;
   word-wrap: normal;
+}
+.todoText {
+  margin: auto 0 auto 0;
+}
+.container:hover {
+  border: solid 3px;
+  transition: border 0.15s linear;
+}
+.rightSide > button {
+  margin: auto;
+  max-height: 7em;
+  max-width: 7em;
+}
+.rightSide {
+  border-left: 2px solid;
+  display: flex;
+  flex-direction: row;
+}
+.dateWrapper {
+  margin: auto 1vw auto 1vw;
+  min-width: 8vw;
+  display: flex;
+  flex-direction: column;
 }

@@ -8,14 +8,25 @@ function App() {
     const removeArr = [...data].filter((todo) => todo.id !== id);
     setData(removeArr);
   };
-  const addData = (inputText) => {
-    if (inputText.replace(/\s/g, "").length) {
-      const inputData = {
-        id: Math.floor(Math.random() * 10000),
-        text: inputText,
-      };
-      setData([...data, inputData]);
-    }
+  const addData = (inputText, dateData) => {
+    const getDate = (dateData) => {
+      const date = `${dateData.getUTCDate()}.${
+        dateData.getMonth() + 1
+      }.${dateData.getFullYear()} `;
+      return date;
+    };
+
+    const getTime = (dateData) => {
+      const time = ` ${dateData.getHours()}:${dateData.getMinutes()}`;
+      return time;
+    };
+    const inputData = {
+      id: Math.floor(Math.random() * 10000),
+      text: inputText,
+      date: getDate(dateData),
+      time: getTime(dateData),
+    };
+    setData([...data, inputData]);
   };
   return (
     <Container>
