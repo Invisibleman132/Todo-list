@@ -16,8 +16,13 @@ export const List = ({ data, removeTodo }) => {
           <abbr title={todo.text}>{todo.text}</abbr>
         </div>
         <div className={styles.three}>
-          <abbr className={styles.tabr} title={threeMult(todo.text)}>
-            {threeMult(todo.text)}
+          <abbr
+            className={
+              threeMult(todo.text) === "" ? styles.tadrEmpty : styles.tadr
+            }
+            title={threeMult(todo.text)}
+          >
+            {threeMult(todo.text) === "" ? "Empty" : threeMult(todo.text)}
           </abbr>
         </div>
         <div className={styles.rightSide}>

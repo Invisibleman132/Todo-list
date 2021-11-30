@@ -19,7 +19,7 @@
   font-size: 1.5rem;
 }
 .todoText {
-  margin: auto 0 auto 0;
+  margin: auto 4vw auto 0;
   min-width: 35vw;
   font-size: 1.5vw;
   white-space: nowrap;
@@ -63,9 +63,7 @@ abbr[title] {
   min-width: 7vw;
   font-size: 1.5vw;
 }
-.three > section {
-  margin: auto;
-}
+
 .container > .rightSide > button {
   height: 4rem;
   width: 4rem;
@@ -75,9 +73,12 @@ img {
   width: 3em;
 }
 .three > abbr {
-  margin: auto;
   white-space: nowrap;
   text-overflow: ellipsis;
   overflow: hidden;
   max-width: 7vw;
+}
+.tadrEmpty {
+  font-size: 1.5em;
+  color: rgba(8, 8, 8, 0.2);
 }
