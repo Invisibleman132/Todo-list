@@ -1,5 +1,6 @@
 body {
   background: linear-gradient(to right, white, black);
+  font-size: 1rem;
 }
 .listContainer {
   margin-left: 20vw;
@@ -8,4 +9,5 @@ body {
   margin-top: 10vh;
   background-color: rgba(255, 255, 255, 0.5);
   overflow-y: auto;
+  overflow-x: hidden;
 }

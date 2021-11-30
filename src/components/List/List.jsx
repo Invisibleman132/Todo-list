@@ -1,19 +1,8 @@
 import del from "./img/del.png";
+import { threeMult } from "../util";
 import styles from "./list.module.css";
 
 export const List = ({ data, removeTodo }) => {
-  const threeMult = (text) => {
-    let threeText = "";
-    for (let i = 0; i < text.length; i++) {
-      if (text[i] % 3 === 0) {
-        threeText += text[i];
-      }
-    }
-    if (!threeText) {
-      return "No 3's";
-    }
-    return threeText.replace(/\s+/g, "");
-  };
   if (Object.keys(data).length === 0) {
     return (
       <div>
@@ -24,10 +13,12 @@ export const List = ({ data, removeTodo }) => {
     return data.map((todo, index) => (
       <div key={index} className={styles.container}>
         <div key={todo.id} className={styles.todoText}>
-          {todo.text}
+          <abbr title={todo.text}>{todo.text}</abbr>
         </div>
         <div className={styles.three}>
-          <section>{threeMult(todo.text)}</section>
+          <abbr className={styles.tabr} title={threeMult(todo.text)}>
+            {threeMult(todo.text)}
+          </abbr>
         </div>
         <div className={styles.rightSide}>
           <div className={styles.dateWrapper}>

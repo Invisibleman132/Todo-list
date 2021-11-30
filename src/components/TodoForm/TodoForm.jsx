@@ -11,18 +11,14 @@ export const TodoForm = (props) => {
       e.target.value = "";
     }
     setInput(e.target.value);
-    if (e.target.value) {
+    if (e.target.value.trim()) {
       setBtnState(false);
-    }
-    if (!e.target.value.trim()) {
-      setBtnState(true);
     }
   };
 
   const handleSumbit = (e) => {
     e.preventDefault();
-    const dateData = new Date();
-    props.onSubmit(input, dateData);
+    props.onSubmit(input);
     setInput("");
     setBtnState(true);
   };

@@ -3,9 +3,9 @@
   flex-direction: column;
 }
 .empty {
-  font-size: 4.5em;
-  margin-left: 18vw;
-  padding-top: 30vh;
+  font-size: 5vw;
+  padding-left: 14vw;
+  padding-top: 18vh;
   color: rgba(53, 51, 51, 0.5);
 }
 .container {
@@ -14,17 +14,24 @@
   flex-direction: row;
   justify-content: space-between;
   padding-left: 3%;
-  font-size: 2rem;
   word-break: break-all;
   word-wrap: normal;
+  font-size: 1.5rem;
 }
 .todoText {
   margin: auto 0 auto 0;
   min-width: 35vw;
+  font-size: 1.5vw;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  max-width: 1px;
+}
+abbr[title] {
+  text-decoration: none;
 }
 .container:hover {
-  border: solid 3px;
-  transition: border 0.15s linear;
+  background-color: rgb(179, 178, 178);
 }
 .rightSide > button {
   margin: auto;
@@ -37,22 +44,40 @@
   flex-direction: row;
 }
 .dateWrapper {
-  margin: auto 1vw auto 1vw;
-  min-width: 8vw;
+  margin-top: auto;
+  margin-bottom: auto;
+  height: 6.5vh;
+  width: 8vw;
   display: flex;
   flex-direction: column;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5vw;
 }
 .three {
   border-left: 2px solid;
   display: flex;
   flex-direction: row;
-  margin-right: auto;
   margin-left: 5vw;
-  font-size: 2rem;
-  word-break: break-all;
-  word-wrap: normal;
   min-width: 7vw;
+  font-size: 1.5vw;
 }
 .three > section {
   margin: auto;
+}
+.container > .rightSide > button {
+  height: 4rem;
+  width: 4rem;
+}
+img {
+  height: 3em;
+  width: 3em;
+}
+.three > abbr {
+  margin: auto;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  max-width: 7vw;
 }
