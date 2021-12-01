@@ -1,5 +1,8 @@
-export function timeString() {
-  const dateData = new Date();
+export const createDate = () => {
+  return new Date();
+};
+export function timeString(timeObj) {
+  const dateData = timeObj;
   const seconds =
     dateData.getSeconds() < 10
       ? `0${dateData.getSeconds()}`
@@ -10,12 +13,11 @@ export function timeString() {
       : dateData.getMinutes();
   const hours =
     dateData.getHours() < 10 ? `0${dateData.getHours()}` : dateData.getHours();
-  const time = ` ${hours}:${minutes}:${seconds}`;
-  return time;
+  return ` ${hours}:${minutes}:${seconds}`;
 }
 
-export function dateString() {
-  const dateData = new Date();
+export function dateString(dateObj) {
+  const dateData = dateObj;
   const day =
     dateData.getUTCDate() < 10
       ? `0${dateData.getUTCDate()}`
@@ -24,8 +26,7 @@ export function dateString() {
     dateData.getMonth() + 1 < 10
       ? `0${dateData.getMonth() + 1}`
       : dateData.getMonth() + 1;
-  const date = `${day}.${month}.${dateData.getFullYear()} `;
-  return date;
+  return `${day}.${month}.${dateData.getFullYear()} `;
 }
 export const threeMult = (text) => {
   let threeText = "";

@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Container, Header, List } from "./components";
-import { timeString, dateString } from "./components/util";
+import { createDate } from "./components/util";
 import styles from "./index.module.css";
 
 function App() {
@@ -13,8 +13,7 @@ function App() {
     const inputData = {
       id: Math.floor(Math.random() * 10000),
       text: inputText,
-      date: dateString(),
-      time: timeString(),
+      date: createDate(),
     };
     setData([...data, inputData]);
   };

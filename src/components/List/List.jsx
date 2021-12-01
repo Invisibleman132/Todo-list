@@ -1,5 +1,5 @@
 import del from "./img/del.png";
-import { threeMult } from "../util";
+import { threeMult, dateString, timeString } from "../util";
 import styles from "./list.module.css";
 
 export const List = ({ data, removeTodo }) => {
@@ -16,19 +16,14 @@ export const List = ({ data, removeTodo }) => {
           <abbr title={todo.text}>{todo.text}</abbr>
         </div>
         <div className={styles.three}>
-          <abbr
-            className={
-              threeMult(todo.text) === "" ? styles.tadrEmpty : styles.tadr
-            }
-            title={threeMult(todo.text)}
-          >
-            {threeMult(todo.text) === "" ? "Empty" : threeMult(todo.text)}
+          <abbr className={styles.tadr} title={threeMult(todo.text)}>
+            {threeMult(todo.text)}
           </abbr>
         </div>
         <div className={styles.rightSide}>
           <div className={styles.dateWrapper}>
-            <section>{todo.date}</section>
-            <section>{todo.time}</section>
+            <section>{dateString(todo.date)}</section>
+            <section>{timeString(todo.date)}</section>
           </div>
           <button onClick={() => removeTodo(todo.id)}>
             <img src={del} alt=""></img>
