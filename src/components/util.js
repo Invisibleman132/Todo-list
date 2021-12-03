@@ -26,7 +26,7 @@ export function dateString(dateObj) {
     dateData.getMonth() + 1 < 10
       ? `0${dateData.getMonth() + 1}`
       : dateData.getMonth() + 1;
-  return `${day}.${month}.${dateData.getFullYear()} `;
+  return `${day}.${month}.${dateData.getFullYear()} \xa0`;
 }
 export const threeMult = (text) => {
   let threeText = "";
