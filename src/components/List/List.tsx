@@ -1,8 +1,20 @@
 import del from "./img/del.png";
 import { threeMult, dateString, timeString } from "../util";
 import styles from "./list.module.css";
+import { FunctionComponent } from "react";
 
-export const List = ({ data, removeTodo }) => {
+interface IData{
+  id:number;
+  text:string;
+  date: Date;
+}
+
+ type TProps={
+  data:IData[];
+  removeTodo : (id:number) => void;
+ }
+
+export const List:FunctionComponent<TProps> = ({data, removeTodo }) => {
   if (Object.keys(data).length === 0) {
     return (
       <div>
@@ -10,7 +22,7 @@ export const List = ({ data, removeTodo }) => {
       </div>
     );
   } else {
-    return data.map((todo, index) => (
+    return <>{data.map((todo:IData, index:number) => (
       <div key={index} className={styles.container}>
         <div key={todo.id} className={styles.todoText}>
           <abbr title={todo.text}>{todo.text}</abbr>
@@ -21,15 +33,15 @@ export const List = ({ data, removeTodo }) => {
           </abbr>
         </div>
         <div className={styles.rightSide}>
-          <div className={styles.dateWrapper}>
-            <section>{dateString(todo.date)}</section>
-            <section>{timeString(todo.date)}</section>
-          </div>
+          <abbr
+            title={`${timeString(todo.date)} \xa0 ${dateString(todo.date)}`}
+          >{`${timeString(todo.date)} \xa0 ${dateString(todo.date)}`}</abbr>
           <button onClick={() => removeTodo(todo.id)}>
             <img src={del} alt=""></img>
           </button>
         </div>
       </div>
-    ));
+    ))}
+    </>
   }
 };

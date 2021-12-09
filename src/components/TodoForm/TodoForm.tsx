@@ -1,12 +1,16 @@
-import { useState } from "react";
+import React, { FunctionComponent, useState } from "react";
 import add from "./img/add.png";
 import styles from "./todoForm.module.css";
 
-export const TodoForm = (props) => {
+type TProps={
+  onSubmit : ( inputText : string) => void;
+}
+
+export const TodoForm:FunctionComponent<TProps> = ({onSubmit}) => {
   const [input, setInput] = useState("");
   const [btnState, setBtnState] = useState(true);
 
-  const handleChange = (e) => {
+  const handleChange = (e:React.ChangeEvent<HTMLInputElement>) => {
     if (e.target.value === "  ") {
       e.target.value = "";
     }
@@ -16,9 +20,9 @@ export const TodoForm = (props) => {
     }
   };
 
-  const handleSumbit = (e) => {
+  const handleSumbit = (e:React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    props.onSubmit(input);
+    onSubmit(input);
     setInput("");
     setBtnState(true);
   };

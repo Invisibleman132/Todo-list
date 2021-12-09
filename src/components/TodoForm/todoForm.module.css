@@ -9,7 +9,7 @@
 input::placeholder {
   color: grey;
   opacity: 0.5;
-  font-size: 3vw;
+  font-size: 5vmin;
   text-align: center;
 }
 
