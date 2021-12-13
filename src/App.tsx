@@ -13,11 +13,11 @@ interface IData{
 
 function App() {
   const [data, setData] = useState<IData[]>([]);
-  const removeTodo = (id:number) => {
+  const removeTodo = (id:number):void => {
     const removeArr = [...data].filter((todo) => todo.id !== id);
     setData(removeArr);
   };
-  const addData = (inputText:string) => {
+  const addData = (inputText:string):void => {
     const inputData = {
       id: Math.floor(Math.random() * 10000),
       text: inputText,

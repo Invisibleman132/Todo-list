@@ -1,7 +1,7 @@
-export const createDate = () => {
+export const createDate = ():Date => {
   return new Date();
 };
-export function timeString(timeObj:Date) {
+export function timeString(timeObj:Date):string {
   const seconds =
   timeObj.getSeconds() < 10
       ? `0${timeObj.getSeconds()}`
@@ -15,7 +15,7 @@ export function timeString(timeObj:Date) {
   return ` ${hours}:${minutes}:${seconds}`;
 }
 
-export function dateString(dateObj:Date) {
+export function dateString(dateObj:Date):string {
   const day =
   dateObj.getDate() < 10 ? `0${dateObj.getDate()}` : dateObj.getDate();
   const month =
@@ -24,7 +24,7 @@ export function dateString(dateObj:Date) {
       : dateObj.getMonth() + 1;
   return `${day}.${month}.${dateObj.getFullYear()}`;
 }
-export const threeMult = (text:string) => {
+export const threeMult = (text:string):string => {
   let threeText = "";
   for (let i = 0; i < text.length; i++) {
     if (text[i] as unknown as number % 3 === 0) {

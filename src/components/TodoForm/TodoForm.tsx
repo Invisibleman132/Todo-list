@@ -10,7 +10,7 @@ export const TodoForm:FunctionComponent<TProps> = ({onSubmit}) => {
   const [input, setInput] = useState("");
   const [btnState, setBtnState] = useState(true);
 
-  const handleChange = (e:React.ChangeEvent<HTMLInputElement>) => {
+  const handleChange = (e:React.ChangeEvent<HTMLInputElement>):void => {
     if (e.target.value === "  ") {
       e.target.value = "";
     }
@@ -20,7 +20,7 @@ export const TodoForm:FunctionComponent<TProps> = ({onSubmit}) => {
     }
   };
 
-  const handleSumbit = (e:React.FormEvent<HTMLFormElement>) => {
+  const handleSumbit = (e:React.FormEvent<HTMLFormElement>):void => {
     e.preventDefault();
     onSubmit(input);
     setInput("");
